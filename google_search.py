@@ -15,6 +15,7 @@ def google_search(query: str, num: int = 10) -> List[Dict]:
         "num": min(max(num, 1), 10),
         "safe": "off",
         "hl": "es",
+        "dateRestrict": "m6",   # 🔥 filtra a últimos 6 meses
     }
     r = requests.get(url, params=params, timeout=30)
     r.raise_for_status()
